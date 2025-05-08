@@ -28,9 +28,11 @@ To convert domain to IP use - https://www.nslookup.io/website-to-ip-lookup/
 
 # Usage 🧠
 
-``` git clone https://github.com/pdotexe/CyberToolKit.git
+```
+    git clone https://github.com/pdotexe/CyberToolKit.git
     cd CyberToolKit
     python -m pip install -r requirements.txt
-    python3 cybertoolkit.py ```
+    python3 cybertoolkit.py
+```
  
 
