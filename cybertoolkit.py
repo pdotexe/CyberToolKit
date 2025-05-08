@@ -88,7 +88,7 @@ def scan_single_port():
     for port in range(1, 1024):
         try:
             sock = socket.socket(family, sock_type)
-            sock.settimeout(0.9)
+            sock.settimeout(5)
             if protocol == "2" or protocol == "tcp" or protocol == "TCP":
                 result = sock.connect_ex((target,port))
                 if result == 0:
@@ -96,12 +96,12 @@ def scan_single_port():
             else:
                 try:
                     sock.sendto(b"", (target, port)) # b"" send bytes
-                    sock.settimeout(0.9) 
+                    sock.settimeout(5) 
                     sock.recvfrom(80) 
                     print(Fore.GREEN + f"Port {port} is open on {protocol.upper()} protocol")
                 
                 except socket.timeout:
-                    print(Fore.RED + f"Port {port} (No Response)")
+                    print(Fore.RED + f"Port {port} timed out (Unresponsive)")
                 except Exception as e:
                     pass
             sock.close()
