@@ -85,23 +85,26 @@ def scan_single_port():
         print(Fore.RED + "Invalid protocol. Please enter 'tcp' or 'udp'.")
         return
     print(Fore.MAGENTA + f"\n Scanning ports 1-1024 on {target} using {protocol.upper()} protocol...\n")
+    print(Fore.MAGENTA + f"\n This may take some time...\n")
     for port in range(1, 1024):
         try:
             sock = socket.socket(family, sock_type)
-            sock.settimeout(5)
+            sock.settimeout(3.4)
             if protocol == "2" or protocol == "tcp" or protocol == "TCP":
                 result = sock.connect_ex((target,port))
                 if result == 0:
                     print(Fore.GREEN + f"Port {port} is open on {protocol.upper()} protocol")
             else:
-                try:
-                    sock.sendto(b"", (target, port)) # b"" send bytes
-                    sock.settimeout(5) 
-                    sock.recvfrom(80) 
+                try: # send dummy connection with UDP 
+                    sock.sendto(b"", (target, port)) # b"" send empty bytes
+                    sock.settimeout(3.4) 
+                    sock.recvfrom(1024) # buffer size of 1024
                     print(Fore.GREEN + f"Port {port} is open on {protocol.upper()} protocol")
                 
                 except socket.timeout:
-                    print(Fore.RED + f"Port {port} timed out (Unresponsive)")
+                    pass 
+                except ConnectionRefusedError:
+                    pass
                 except Exception as e:
                     pass
             sock.close()
