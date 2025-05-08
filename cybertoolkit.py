@@ -101,7 +101,7 @@ def scan_single_port():
                     print(Fore.GREEN + f"Port {port} is open on {protocol.upper()} protocol")
                 
                 except socket.timeout:
-                    print(Fore.GREEN + f"Port {port} (No Response)")
+                    print(Fore.RED + f"Port {port} (No Response)")
                 except Exception as e:
                     pass
             sock.close()
