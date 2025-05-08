@@ -1,2 +1,36 @@
-# CyberToolKit
-Basic list of cybersecurity tools with ease-of-use
+
+# 🛠️ CyberToolKit  🛰️
+
+![image](https://github.com/user-attachments/assets/9cfb17fb-7513-4077-a730-de77d6bec7fe)
+
+
+Cybertoolkit is a simple CLI tool built with python3 for  basic security tasks
+
+# Key features 🚀:
+
+# Password Strength Checker 🔐
+* Basic password strength checker based on special characters, capital letters, and length of password string.
+* Good to use to prevent dictionary-based attacks
+* Uses REGEX to check password string and examine strength
+
+# File Hasher 📄
+* Supports SHA256, SHA-1, and MD5 algorithms 
+* Compares inputted hashes to known hashes and checks for data integrity
+* Fast and easy way to hash files
+
+# Port Scanner 📡 
+( use responsibly )
+* Scans an IP address entered and checks for open ports
+* Supports ports 1-1024
+* Supports TCP and UDP protocols, along with IPv4 and IPv6 addresses
+
+To convert domain to IP use - https://www.nslookup.io/website-to-ip-lookup/ 
+
+# Usage 🧠
+
+``` git clone https://github.com/pdotexe/CyberToolKit.git
+    cd CyberToolKit
+    python -m pip install -r requirements.txt
+    python3 cybertoolkit.py ```
+ 
+
