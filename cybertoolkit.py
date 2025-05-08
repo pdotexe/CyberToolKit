@@ -155,7 +155,7 @@ elif choice == "2":
     hash_file(file_path, algo)
 elif choice == "3":
     print(Fore.CYAN + "Port Scanner")
-    print(Fore.YELLOW + "Scan ports 1-65535")
+    print(Fore.YELLOW + "Scan ports 1-1024")
     scan_single_port()
 elif choice == "4":
     print(Fore.MAGENTA + "Exiting program...")
