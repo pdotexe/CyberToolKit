@@ -28,12 +28,17 @@ Cybertoolkit is a simple CLI tool built with python3 for  basic security tasks
 To convert domain to IP use - https://www.nslookup.io/website-to-ip-lookup/ 
 
 # Usage 🧠
-
+CLI:
 ```
     git clone https://github.com/pdotexe/CyberToolKit.git
     cd CyberToolKit
     python -m pip install -r requirements.txt
     python cybertoolkit.py
 ```
- 
+GUI:
+```
+    git clone https://github.com/pdotexe/CyberToolKit.git
+    cd CyberToolKit
+    python -m pip install -r PyQt5
+    python cybertoolkitgui.py
 
