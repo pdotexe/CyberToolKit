@@ -39,6 +39,6 @@ GUI:
 ```
     git clone https://github.com/pdotexe/CyberToolKit.git
     cd CyberToolKit
-    python -m pip install -r PyQt5
+    pip install PyQt5
     python cybertoolkitgui.py
 
